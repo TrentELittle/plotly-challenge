@@ -76,3 +76,14 @@ function init(){
             metaPanel.append("h6").text(`${key.toUpperCase()}: ${value}`)
         })
     
+    var data = [
+      {
+        domain: { x: [0, 1], y: [0, 1] },
+        marker: {size: 28, color:'850000'},
+        value: result.wfreq,
+        title: 'Belly Button Washing Frequency<br> Scrubs per Week',
+        titlefont: {family: '"Arial, Helvetica, sans-serif'},
+        type: "indicator",
+        gauge: { axis: { visible: true, range: [0, 9] } },
+        mode: "number+gauge"
+      }
