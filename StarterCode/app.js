@@ -65,4 +65,14 @@ function init(){
     });
   }
   
-  
+  function updateMetadata(sample) {
+    d3.json("data/samples.json").then((data) => {
+        var metadata = data.metadata;
+        var filterArray = metadata.filter(sampleObject => sampleObject.id == sample);
+        var result = filterArray[0];
+        var metaPanel = d3.select("#sample-metadata");
+        metaPanel.html("");
+        Object.entries(result).forEach(([key, value]) => {
+            metaPanel.append("h6").text(`${key.toUpperCase()}: ${value}`)
+        })
+    
