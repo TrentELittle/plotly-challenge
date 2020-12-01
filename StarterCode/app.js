@@ -46,3 +46,23 @@ function init(){
         font: { color: "#49a81d", family: "Arial, Helvetica, sans-serif" },
         margin: {t:30}
     };
+    Plotly.newPlot('bubble', data, layout); 
+    var trace1 = {
+        x: sample_values.slice(0,10).reverse(),
+        y: otu_ids.slice(0,10).map(otuID => `OTU ${otuID}`).reverse(),
+        text: otu_labels.slice(0,10).reverse(),
+        name: "Greek",
+        type: "bar",
+        orientation: "h"
+    };
+    var data = [trace1];
+    var layout = {
+        title: "Top Ten OTUs for Individual " +sample,
+        margin: {l: 100, r: 100, t: 100, b: 100},
+        font: { color: "#49a81d", family: "Arial, Helvetica, sans-serif" }
+    };
+    Plotly.newPlot("bar", data, layout);  
+    });
+  }
+  
+  
