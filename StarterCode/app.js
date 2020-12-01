@@ -87,3 +87,26 @@ function init(){
         gauge: { axis: { visible: true, range: [0, 9] } },
         mode: "number+gauge"
       }
+    ];
+  
+    var layout = {
+      width: 600,
+       height: 450,
+       margin: { t: 100, r: 100, l: 100, b: 100 },
+       line: {
+       color: '600000'
+       },
+       font: { color: "#49a81d", family: "Arial, Helvetica, sans-serif" }
+     };
+  
+    
+    Plotly.newPlot("gauge", data, layout);
+    });
+  }
+  
+  function optionChanged(newSample) {
+    updateMetadata(newSample);
+    updateCharts(newSample);
+  }
+  
+  init();
